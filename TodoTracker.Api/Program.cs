@@ -1,6 +1,7 @@
 using HotChocolate.Diagnostics;
 using OpenTelemetry.Trace;
 using TodoTracker.Api.Data;
+using TodoTracker.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,10 @@ builder.Services.AddPooledDbContextFactory<TodoDbContext>(cfg =>
         cfg.EnableSensitiveDataLogging();
     }
 });
+
+// Add domain services
+builder.Services
+    .AddScoped<IProjectService, ProjectService>();
 
 // Add GraphQL support
 builder.AddGraphQL()
