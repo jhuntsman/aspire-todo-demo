@@ -28,7 +28,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\TodoTracker.Application\TodoTracker.Application.csproj" />
       <ProjectReference Include="..\TodoTracker.ServiceDefaults\TodoTracker.ServiceDefaults.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Models\" />
     </ItemGroup>
 
 </Project>

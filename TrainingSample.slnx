@@ -1,5 +1,10 @@
 <Solution>
-  <Project Path="TodoTracker.Api/TodoTracker.Api.csproj" />
+  <Folder Name="/Domain/">
+    <Project Path="TodoTracker.Application/TodoTracker.Application.csproj" />
+  </Folder>
+  <Folder Name="/Infrastructure/">
+    <Project Path="TodoTracker.Api/TodoTracker.Api.csproj" />
+    <Project Path="TodoTracker.ServiceDefaults/TodoTracker.ServiceDefaults.csproj" />
+  </Folder>
   <Project Path="TodoTracker.AppHost/TodoTracker.AppHost.csproj" />
-  <Project Path="TodoTracker.ServiceDefaults/TodoTracker.ServiceDefaults.csproj" />
 </Solution>

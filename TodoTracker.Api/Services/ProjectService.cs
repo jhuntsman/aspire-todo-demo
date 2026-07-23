@@ -1,15 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TodoTracker.Api.Data;
-using TodoTracker.Api.Models;
+using TodoTracker.Application.Interfaces;
+using TodoTracker.Application.Models;
 
 namespace TodoTracker.Api.Services;
-
-public interface IProjectService
-{
-    IQueryable<TodoProject> GetProjects();
-    
-    Task<TodoProject?> GetProjectAsync(int id);
-}
 
 public class ProjectService : IAsyncDisposable, IProjectService
 {

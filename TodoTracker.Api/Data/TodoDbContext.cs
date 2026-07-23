@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TodoTracker.Api.Models;
+using TodoTracker.Application.Models;
 
 namespace TodoTracker.Api.Data;
 

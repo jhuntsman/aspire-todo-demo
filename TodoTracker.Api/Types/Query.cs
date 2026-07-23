@@ -1,6 +1,6 @@
-using TodoTracker.Api.Data;
-using TodoTracker.Api.Models;
-using TodoTracker.Api.Services;
+using MediatR;
+using TodoTracker.Application.Models;
+using TodoTracker.Application.Queries;
 
 namespace TodoTracker.Api.Types;
 
@@ -8,14 +8,14 @@ namespace TodoTracker.Api.Types;
 public static partial class Query
 {
     [Query]
-    public static IQueryable<TodoProject> GetProjects(TodoDbContext dbContext)
+    public static async Task<IQueryable<TodoProject>> GetProjects(IMediator mediator, CancellationToken ct)
     {
-        return dbContext.Projects;
+        return await mediator.Send(new QueryProjects(), ct);
     }
     
     [Query]
-    public static async Task<TodoProject?> GetProjectByIdAsync(int id, IProjectService projectService)
+    public static async Task<TodoProject?> GetProjectByIdAsync(int id, IMediator mediator, CancellationToken ct)
     {
-        return await projectService.GetProjectAsync(id);
+        return await mediator.Send(new QueryProjectById(id), ct);
     }
 }

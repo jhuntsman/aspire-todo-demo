@@ -1,4 +1,4 @@
-﻿namespace TodoTracker.Api.Models;
+﻿namespace TodoTracker.Application.Models;
 
 public class TodoTag
 {
