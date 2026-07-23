@@ -1,1 +1,3 @@
-<Solution />
+<Solution>
+  <Project Path="TodoTracker.AppHost/TodoTracker.AppHost.csproj" />
+</Solution>

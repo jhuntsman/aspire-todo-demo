@@ -1,0 +1,5 @@
+{
+  "appHost": {
+    "path": "TodoTracker.AppHost.csproj"
+  }
+}
