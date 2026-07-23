@@ -13,6 +13,9 @@
 
     <ItemGroup>
         <PackageReference Include="Aspire.Azure.Npgsql.EntityFrameworkCore.PostgreSQL" Version="13.4.6" />
+        <PackageReference Include="FairyBread" Version="13.1.0" />
+        <PackageReference Include="FluentValidation" Version="12.1.1" />
+        <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
         <PackageReference Include="HotChocolate.AspNetCore" Version="16.5.1"/>
         <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="16.5.1"/>
         <PackageReference Include="HotChocolate.Data.EntityFramework" Version="16.5.1" />

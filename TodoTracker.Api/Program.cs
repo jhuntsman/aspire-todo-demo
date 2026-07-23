@@ -1,4 +1,5 @@
 using HotChocolate.Diagnostics;
+using FluentValidation;
 using OpenTelemetry.Trace;
 using TodoTracker.Api.Data;
 using TodoTracker.Api.Services;
@@ -32,10 +33,15 @@ builder.Services
     {
         config.RegisterServicesFromAssemblyContaining<IProjectService>();
     })
+    .AddValidatorsFromAssemblyContaining<Program>()
     .AddScoped<IProjectService, ProjectService>();
 
 // Add GraphQL support
 builder.AddGraphQL()
+    .AddFairyBread(options =>
+    {
+        options.ThrowIfNoValidatorsFound = false;
+    })
     .RegisterDbContextFactory<TodoDbContext>()
     .AddInstrumentation(options =>
     {
