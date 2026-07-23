@@ -24,6 +24,15 @@ public class ProjectService : IAsyncDisposable, IProjectService
         return await _dbContext.Projects.FindAsync(id);
     }
 
+    public async Task<TodoProject> AddProject(TodoProject project)
+    {
+        _dbContext.Projects.Add(project);
+        
+        await _dbContext.SaveChangesAsync();
+        
+        return project;
+    }
+
     public async ValueTask DisposeAsync()
     {
         await _dbContext.DisposeAsync();
