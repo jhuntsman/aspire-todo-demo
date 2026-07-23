@@ -9,7 +9,7 @@ public class TodoItem
 
     // Foreign Key to Project
     public int ProjectId { get; set; }
-    public Project Project { get; set; } = null!;
+    public TodoProject Project { get; set; } = null!;
 
     // Many-to-Many with Tags
     public ICollection<TodoTag> Tags { get; set; } = new List<TodoTag>();

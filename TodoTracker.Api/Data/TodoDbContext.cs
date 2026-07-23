@@ -7,7 +7,7 @@ public class TodoDbContext : DbContext
 {
     public TodoDbContext(DbContextOptions<TodoDbContext> options) : base(options) { }
 
-    public DbSet<Project> Projects => Set<Project>();
+    public DbSet<TodoProject> Projects => Set<TodoProject>();
     public DbSet<TodoItem> TodoItems => Set<TodoItem>();
     public DbSet<TodoTag> Tags => Set<TodoTag>();
 
@@ -15,6 +15,9 @@ public class TodoDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        modelBuilder.Entity<TodoProject>()
+            .ToTable("Projects");
+        
         modelBuilder.Entity<TodoTag>()
             .ToTable("Tags");
         

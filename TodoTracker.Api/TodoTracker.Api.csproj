@@ -16,6 +16,7 @@
         <PackageReference Include="HotChocolate.AspNetCore" Version="16.5.1"/>
         <PackageReference Include="HotChocolate.AspNetCore.CommandLine" Version="16.5.1"/>
         <PackageReference Include="HotChocolate.Data.EntityFramework" Version="16.5.1" />
+        <PackageReference Include="HotChocolate.Diagnostics" Version="16.5.1" />
         <PackageReference Include="HotChocolate.Types.Analyzers" Version="16.5.1">
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
             <PrivateAssets>all</PrivateAssets>
@@ -24,6 +25,10 @@
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\TodoTracker.ServiceDefaults\TodoTracker.ServiceDefaults.csproj" />
     </ItemGroup>
 
 </Project>
