@@ -13,7 +13,6 @@ public class TodoProjectType : ObjectType<TodoProject>
         base.Configure(descriptor);
 
         descriptor.Field(x => x.Id)
-            .Description("The unique identifier of the todo project")
             .IsProjected();
         
         descriptor.Field("todoItemsCount")
@@ -26,7 +25,7 @@ public class TodoProjectType : ObjectType<TodoProject>
                 var dbContextFactory = ctx.Service<IDbContextFactory<TodoDbContext>>();
                 await using var dbContext = await dbContextFactory.CreateDbContextAsync(ct);
                 
-                return await dbContext.TodoItems.CountAsync(x=>x.ProjectId == parent.Id, ct);
+                return await dbContext.TodoItems.CountAsync(x=> x.ProjectId == parent.Id, ct);
             });
             
     }

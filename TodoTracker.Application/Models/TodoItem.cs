@@ -1,3 +1,4 @@
+
 namespace TodoTracker.Application.Models;
 
 public class TodoItem
